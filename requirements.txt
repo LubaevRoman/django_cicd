@@ -4,6 +4,6 @@ psycopg2-binary
 django-filter
 python-dotenv
 gunicorn
-postgresql
+msql
 requests
 flake8
