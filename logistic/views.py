@@ -22,6 +22,6 @@ class StockViewSet(ModelViewSet):
     filterset_fields = ['products']
 
 
-@api_view(['GET'])
-def sample_view(request):
-    return Response('Hello world! CI/CD')
+class TestView(APIView):
+    def get(self, request):
+        return Response({"message": "Всем большой привет!"})
