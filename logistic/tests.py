@@ -1,7 +1,5 @@
-from unittest import TestCase
-
 from rest_framework.test import APIClient
-
+from unittest import TestCase
 
 class TestSomething(TestCase):
     def test_sample_view(self):
