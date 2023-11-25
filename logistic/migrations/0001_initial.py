@@ -3,6 +3,7 @@
 import django.core.validators
 from django.db import migrations, models
 import django.db.models.deletion
+import django.db.backends.postgresql
 
 
 class Migration(migrations.Migration):
