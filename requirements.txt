@@ -3,7 +3,5 @@ djangorestframework
 psycopg2-binary
 django-filter
 python-dotenv
-gunicorn
-msql
 requests
 flake8
