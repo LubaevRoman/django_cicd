@@ -38,12 +38,13 @@ jobs:
       - name: Установка python и создание окружения
         uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: 3.11
 
       - name: Установить зависимости
         run: pip install -r requirements.txt
 
-     
+      - name: Линтинг
+        run: flake8 logistic/ --exclude=logistic/migrations/
 
       - name: Тесты
         run: python manage.py test
