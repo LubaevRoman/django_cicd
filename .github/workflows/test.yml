@@ -2,11 +2,11 @@ name: Тестирование и развёртывание проекта
 
 on:
   push:
-    branches: [ci]
+    branches: [cicd]
 
 jobs:
   tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     env:
       SECRET: ${{ secrets.DJANGO_SECRET }}
       DEBUG: ${{ secrets.DEBUG }}
@@ -45,6 +45,11 @@ jobs:
 
       - name: Линтинг
         run: flake8 logistic/ --exclude=logistic/migrations/
+        
+               
+
+      - name: Тесты
+        run: python manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET }}
           DEBUG: ${{ env.DEBUG }}
@@ -55,10 +60,6 @@ jobs:
           DB_PASSWORD: ${{ env.DB_PASSWORD }}
           DB_HOST: ${{ env.DB_HOST }}
           DB_PORT: ${{ env.DB_PORT }}
-        
-
-      - name: Тесты
-        run: python manage.py test
        
 
       - name: Деплой
